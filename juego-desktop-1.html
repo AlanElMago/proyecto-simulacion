@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css.css">
+    <title>Juego</title>
+</head>
+<body>
+    <div class="main-container">
+        <!-- tablero de puntos -->
+        <div>
+            <div class="points-table">
+                <div class="game">
+                    <!-- este tablero es para obtener el puntaje de bono -->
+                    <div class="lower">
+                        <div class="points-container">
+                            <div class = "block">
+                                <label>Unos</label>
+                                <div class="score-block"></div>
+                            </div>
+                            <div class = "block">
+                                <label>Doses</label>
+                                <div class="score-block"></div>
+                            </div>
+                            <div class = "block">
+                                <label>Treses</label>
+                                <div class="score-block"></div>
+                            </div>
+                            <div class = "block">
+                                <label>Cuatros</label>
+                                <div class="score-block"></div>
+                            </div>
+                            <div class = "block">
+                                <label>Cincos</label>
+                                <div class="score-block"></div>
+                            </div>
+                            <div class = "block">
+                                <label>Seises</label>
+                                <div class="score-block"></div>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <!-- este tablero es para jugar los espacios de 3 iguales, full house, etc -->
+                    <div class="maximum">
+                        <div class="points-container">
+                            <div class = "block">
+                                <label>3 Iguales</label>
+                                <div class="score-block"></div>
+                            </div>
+                            <div class = "block">
+                                <label>4 Iguales</label>
+                                <div class="score-block"></div>        
+                            </div>
+                            <div class = "block">
+                                <label>Full House</label>
+                                <div class="score-block"></div>
+                            </div>
+                            <div class = "block">
+                                <label>Escalera C.</label>
+                                <div class="score-block"></div>                        
+                            </div>
+                            <div class = "block">
+                                <label>Escalera L.</label>
+                                <div class="score-block"></div>                        
+                            </div>
+                            <div class = "block">
+                                <label>Yahtzee</label>
+                                <div class="score-block"></div>                        
+                            </div>
+                            <div class = "block">
+                                <label>Chance</label>
+                                <div class="score-block"></div>                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="solid">
+
+                <!-- este tablero es para mostrar el puntaje final -->
+                <div class="score">
+                    <div class="points-total">
+                        <div class="left-container">
+                            <div class = "block">
+                                <label>Bono</label>
+                                <div class="score-block"></div>                        
+                            </div>
+                        </div>
+            
+                        <div class="right-container">
+                            <div class = "block">
+                                <label>Bono Y.</label>
+                                <div class="score-block"></div>                        
+                            </div>
+                            <div class = "block">
+                                <label>Total</label>
+                                <div class="score-block"></div>                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <Button class="btn">
+                <div class="text-btn">
+                    <img src="./Images/home.png" class="img-btn"> 
+                    <p>Menú</p>
+                </div>
+            </Button>
+        </div>
+
+        <!-- este es el tablero dados -->
+        <div>        
+            <div class="dice-holder">
+                <div class="die-holder"></div>
+                <div class="die-holder"></div>
+                <div class="die-holder"></div>
+                <div class="die-holder"></div>
+                <div class="die-holder"></div>
+            </div>
+            <Button class="btn">
+                <div class="text-btn">
+                    <img src="./Images/three.png" class="img-btn"> 
+                    <p>Tirar</p>
+                </div>
+            </Button>
+        </div>
+    </div>
+</body>
+</html>
