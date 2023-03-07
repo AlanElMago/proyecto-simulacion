@@ -63,8 +63,9 @@ body {
     font-size: 36px;
     font-family: "Roboto";
     font-style: normal;
-    border: none;
-    
+    border-radius: 10px;
+    border-style: none;
+    cursor: pointer;
 }
 
 .btn {
@@ -78,6 +79,18 @@ body {
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
     cursor: pointer;
+}
+
+.btn-stats {
+    background-color: #B6B6B6;
+}
+
+.btn-green {
+    background-color: #4CAF50;
+}
+
+.btn-tirar {
+    background-color: #B6B6B6;
 }
 
 .text-btn {
@@ -102,6 +115,30 @@ p {
 
 .btn:active {
     background-color: #EBB652;
+}
+
+.btn-green:hover {
+    background-color: #A5D7A7;
+}
+
+.btn-green:active {
+    background-color: #4CAF50;
+}
+
+.btn-stats:hover {
+    background-color: #cfcfcf;
+}
+
+.btn-stats:active {
+    background-color: #B6B6B6;
+}
+
+.btn-tirar:hover {
+    background-color: #cfcfcf;
+}
+
+.btn-tirar:active {
+    background-color: #B6B6B6;
 }
 
 .container .btn-simulate {
@@ -205,4 +242,16 @@ label {
 .solid {
     border-top: 1px solid #B6B6B6;
     border-radius: 1px;
+}
+
+.btns-simulacion {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px;
+}
+
+.btns-right {
+    display: flex;
+    justify-content: space-between;
+    gap: 37px;
 }

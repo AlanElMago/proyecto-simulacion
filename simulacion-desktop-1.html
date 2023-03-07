@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/css.css">
-    <title>Juego</title>
+    <title>Simulación</title>
 </head>
 <body>
     <div class="main-container">
@@ -103,12 +103,6 @@
                     </div>
                 </div>
             </div>
-            <Button class="btn">
-                <div class="text-btn">
-                    <img src="./Images/home.png" class="img-btn"> 
-                    <a href="menu.html">Menú</a>
-                </div>
-            </Button>
         </div>
 
         <!-- este es el tablero dados -->
@@ -120,13 +114,39 @@
                 <div class="die-holder"></div>
                 <div class="die-holder"></div>
             </div>
-            <Button class="btn">
+            <Button class="btn btn-tirar">
                 <div class="text-btn">
-                    <img src="./Images/three.png" class="img-btn"> 
+                    <img src="./Images/tirar-x.png" class="img-btn"> 
                     <p>Tirar</p>
                 </div>
             </Button>
         </div>
+    </div>
+
+    <div class="btns-simulacion">
+        <Button class="btn">
+            <div class="text-btn">
+                <img src="./Images/home.png" class="img-btn"> 
+                <a href="menu.html">Menú</a>
+            </div>
+        </Button>
+        
+        <div class="btns-right">
+            <button class="btn btn-stats">
+                <div class="text-btn">
+                    <img src="./Images/stats.png" class="img-btn">
+                    <p>Stats</p>
+                </div>
+            </button>
+
+            <button class="btn btn-green">
+                <div class="text-btn">
+                    <img src="./Images/simular.png" class="img-btn">
+                    <p>Simular</p>
+                </div>
+            </button>
+        </div>
+
     </div>
 </body>
 </html>
