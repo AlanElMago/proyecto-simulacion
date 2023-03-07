@@ -16,27 +16,27 @@
                     <!-- este tablero es para obtener el puntaje de bono -->
                     <div class="lower">
                         <div class="points-container">
-                            <div class = "block">
+                            <div class = "block" id="unos">
                                 <label>Unos</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="doses">
                                 <label>Doses</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="treses">
                                 <label>Treses</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="cuatros">
                                 <label>Cuatros</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="cincos">
                                 <label>Cincos</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="seises">
                                 <label>Seises</label>
                                 <div class="score-block"></div>
                             </div>
@@ -114,19 +114,24 @@
         <!-- este es el tablero dados -->
         <div>        
             <div class="dice-holder">
-                <div class="die-holder"></div>
-                <div class="die-holder"></div>
-                <div class="die-holder"></div>
-                <div class="die-holder"></div>
-                <div class="die-holder"></div>
+                <div class="die-holder" id="die-1"></div>
+                <div class="die-holder" id="die-2"></div>
+                <div class="die-holder" id="die-3"></div>
+                <div class="die-holder" id="die-4"></div>
+                <div class="die-holder" id="die-5"></div>
             </div>
-            <Button class="btn">
-                <div class="text-btn">
-                    <img src="./Images/three.png" class="img-btn"> 
-                    <p>Tirar</p>
-                </div>
-            </Button>
+
+            <div id="rolls-container">
+                <Button class="btn" id="btn-rolls">
+                    <div class="text-btn">
+                        <img src="./Images/3.png" class="img-btn"> 
+                        <p>Tirar</p>
+                    </div>
+                </Button>
+            </div>
         </div>
     </div>
+
+    <script src="js/play.js"></script>
 </body>
 </html>

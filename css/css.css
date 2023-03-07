@@ -81,14 +81,6 @@ body {
     cursor: pointer;
 }
 
-.btn-stats {
-    background-color: #B6B6B6;
-}
-
-.btn-green {
-    background-color: #4CAF50;
-}
-
 .btn-tirar {
     background-color: #B6B6B6;
 }
@@ -214,6 +206,9 @@ label {
 
 .die-holder {
     background: #B6B6B6;
+    /* background-image: url(../Images/Number=Five.png);
+    background-repeat: no-repeat;
+    background-size: cover; */
     height: 56px;
     width: 56px;
     left: 0px;
@@ -221,9 +216,49 @@ label {
     border-radius: 10px;
 }
 
+.die-stroke {
+    border: 5px solid #EBB652;
+}
+
 .block {
     display: flex;
     justify-content: space-around;
+}
+
+.die_1 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../Images/Number=One.png);
+}
+
+.die_2 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../Images/Number=Two.png);
+}
+
+.die_3 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../Images/Number=Three.png);    
+}
+
+.die_4 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../Images/Number=Four.png);
+}
+
+.die_5 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../Images/Number=Five.png);
+}
+
+.die_6 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../Images/Number=Six.png);
 }
 
 .points-total {
