@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/css.css">
-    <title>Juego</title>
+    <title>Simulación</title>
 </head>
 <body>
     <div class="main-container">
@@ -16,27 +16,27 @@
                     <!-- este tablero es para obtener el puntaje de bono -->
                     <div class="lower">
                         <div class="points-container">
-                            <div class = "block" id="unos">
+                            <div class = "block">
                                 <label>Unos</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block" id="doses">
+                            <div class = "block">
                                 <label>Doses</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block" id="treses">
+                            <div class = "block">
                                 <label>Treses</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block" id="cuatros">
+                            <div class = "block">
                                 <label>Cuatros</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block" id="cincos">
+                            <div class = "block">
                                 <label>Cincos</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block" id="seises">
+                            <div class = "block">
                                 <label>Seises</label>
                                 <div class="score-block"></div>
                             </div>
@@ -103,35 +103,50 @@
                     </div>
                 </div>
             </div>
-            <Button class="btn">
-                <div class="text-btn">
-                    <img src="./Images/home.png" class="img-btn"> 
-                    <a href="menu.html">Menú</a>
-                </div>
-            </Button>
         </div>
 
         <!-- este es el tablero dados -->
         <div>        
             <div class="dice-holder">
-                <div class="die-holder" id="die-1"></div>
-                <div class="die-holder" id="die-2"></div>
-                <div class="die-holder" id="die-3"></div>
-                <div class="die-holder" id="die-4"></div>
-                <div class="die-holder" id="die-5"></div>
+                <div class="die-holder"></div>
+                <div class="die-holder"></div>
+                <div class="die-holder"></div>
+                <div class="die-holder"></div>
+                <div class="die-holder"></div>
             </div>
-
-            <div id="rolls-container">
-                <Button class="btn" id="btn-rolls">
-                    <div class="text-btn">
-                        <img src="./Images/3.png" class="img-btn"> 
-                        <p>Tirar</p>
-                    </div>
-                </Button>
-            </div>
+            <Button class="btn btn-tirar">
+                <div class="text-btn">
+                    <img src="./Images/tirar-x.png" class="img-btn"> 
+                    <p>Tirar</p>
+                </div>
+            </Button>
         </div>
     </div>
 
-    <script src="js/play.js"></script>
+    <div class="btns-simulacion">
+        <Button class="btn">
+            <div class="text-btn">
+                <img src="./Images/home.png" class="img-btn"> 
+                <a href="menu.html">Menú</a>
+            </div>
+        </Button>
+        
+        <div class="btns-right">
+            <button class="btn btn-stats">
+                <div class="text-btn">
+                    <img src="./Images/stats.png" class="img-btn">
+                    <p>Stats</p>
+                </div>
+            </button>
+
+            <button class="btn btn-green">
+                <div class="text-btn">
+                    <img src="./Images/simular.png" class="img-btn">
+                    <p>Simular</p>
+                </div>
+            </button>
+        </div>
+
+    </div>
 </body>
 </html>
