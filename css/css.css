@@ -81,6 +81,14 @@ body {
     cursor: pointer;
 }
 
+.btn-stats {
+    background-color: #B6B6B6;
+}
+
+.btn-green {
+    background-color: #4CAF50;
+}
+
 .btn-tirar {
     background-color: #B6B6B6;
 }
