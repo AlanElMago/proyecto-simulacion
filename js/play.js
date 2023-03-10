@@ -1,3 +1,5 @@
+/* imports */
+import { Rolls } from './rolls.js';
 /* elements */
 let die_1 = document.querySelector('#die-1');
 let die_2 = document.querySelector('#die-2');
@@ -24,73 +26,4 @@ dices.forEach((dice) => {
   });
 });
 
-function Rolls() {
-  btn_rolls.addEventListener('click', () => {
-    if (rolls === 1) {
-      rolls = 3;
-
-      rolls_container.removeChild(btn_rolls);
-
-      rolls_container.innerHTML = `
-        <Button class="btn btn-tirar" id="btn-no-rolls">
-          <div class="text-btn">
-            <img src="./Images/tirar-x.png" class="img-btn"> 
-            <p>Tirar</p>
-          </div>
-        </Button>`;
-
-      let btn_no_rolls = document.querySelector('#btn-no-rolls');
-
-      btn_no_rolls.addEventListener('click', () => {
-        rolls = 3;
-
-        rolls_container.removeChild(btn_no_rolls);
-
-        rolls_container.innerHTML = `
-        <Button class="btn" id="btn-rolls">
-          <div class="text-btn">
-            <img src="./Images/${rolls}.png" class="img-btn"> 
-              <p>Tirar</p>
-          </div>
-        </Button>
-      `;
-
-        btn_rolls = document.querySelector('#btn-rolls');
-        Rolls();
-      });
-    } else {
-      rolls--;
-      rolls_container.removeChild(btn_rolls);
-
-      rolls_container.innerHTML = `
-        <Button class="btn" id="btn-rolls">
-          <div class="text-btn">
-            <img src="./Images/${rolls}.png" class="img-btn"> 
-              <p>Tirar</p>
-          </div>
-        </Button>
-      `;
-      btn_rolls = document.querySelector('#btn-rolls');
-
-      dices.forEach((dice) => {
-        for (let i = 0; i < 6; i++) {
-          if (!dice.classList.contains('die-stroke')) {
-            dice.classList.remove(`die_${i + 1}`);
-          }
-        }
-      });
-
-      for (let i = 0; i < 5; i++) {
-        let randomNumber = Math.floor(Math.random() * 6) + 1;
-
-        if (!dices[i].classList.contains('die-stroke')) {
-          dices[i].classList.add(`die_${randomNumber}`);
-        }
-      }
-
-      Rolls();
-    }
-  });
-}
-
-Rolls();
+Rolls(rolls, btn_rolls, rolls_container, dices);
