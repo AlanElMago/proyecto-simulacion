@@ -14,7 +14,7 @@ const content6 = document.getElementById('content6');
 
 let chose = 1;
 
-const changeOption = () => {
+export const changeOption = () => {
   chose == 1
     ? ((option1.classList.value = 'option option-active'),
       (content1.classList.value = 'content content-active'))
