@@ -38,48 +38,25 @@
         <div class="contents">
             <div id="content1" class="content content-active">
                 <h3>Cuadrados Medios</h3>
-                <div class="inputs-container">
-                    <div class="form-group">
-                        <label class="form-label" for="first">Semilla</label>
-                        <input id="first" class="form-input" type="text" />
+                <form>
+                    <div class="inputs-container">
+                        <div class="form-group">
+                            <label class="form-label" for="first">Semilla</label>
+                            <input id="semilla-cuadrados" class="form-input"  type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="first">Total de Números a Generar</label>
+                            <input id="total-cuadrados" class="form-input"  type="text" />
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label class="form-label" for="first">Total de Números a Generar</label>
-                        <input id="first" class="form-input" type="text" />
-                    </div>
-                </div>
+
+                    <input id="btn-cuadrados" type="submit" value="Generar Números" class="btn">
+                </form>
 
                 <div class="limiter">
                     <div class="container-table">
                         <div class="wrap-table">
-                            <div class="table">
-                                <table>
-                                    <thead>
-                                        <tr class="table-head">
-                                            <th class="column1">Dato1</th>
-                                            <th class="column2">Dato2</th>
-                                            <th class="column3">Dato3</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <td class="column1">12345</td>
-                                            <td class="column2">12345</td>
-                                            <td class="column3">12345</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="column1">12345</td>
-                                            <td class="column2">12345</td>
-                                            <td class="column3">12345</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="column1">12345</td>
-                                            <td class="column2">12345</td>
-                                            <td class="column3">12345</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="table" id="tabla-cuadrados-medios">                                
                             </div>
                         </div>
                     </div>
@@ -88,42 +65,31 @@
 
             <div id="content2" class="content">
                 <h3>Productos Medios</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Vel odit odio, natus quasi tenetur maiores? Reiciendis, tenetur dolorum amet unde aperiam fugit soluta ullam aspernatur.
-                </p>
+                <form>
+                    <div class="inputs-container">
+                        <div class="form-group">
+                            <label class="form-label" for="first">Semilla 0</label>
+                            <input id="semilla1-productos" class="form-input"  type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="first">Semilla 1</label>
+                            <input id="semilla2-productos" class="form-input"  type="text" />
+                        </div>
+                    </div>
+                    <div class="inputs-container">
+                        <div class="form-group">
+                            <label class="form-label" for="first">Total de Números a Generar</label>
+                            <input id="total-productos" class="form-input"  type="text" />
+                        </div>
+                    </div>
+
+                    <input id="btn-productos" type="submit" value="Generar Números" class="btn">
+                </form>
 
                 <div class="limiter">
                     <div class="container-table">
                         <div class="wrap-table">
-                            <div class="table">
-                                <table>
-                                    <thead>
-                                        <tr class="table-head">
-                                            <th class="column1">Dato1</th>
-                                            <th class="column2">Dato2</th>
-                                            <th class="column3">Dato3</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <td class="column1">12345</td>
-                                            <td class="column2">12345</td>
-                                            <td class="column3">12345</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="column1">12345</td>
-                                            <td class="column2">12345</td>
-                                            <td class="column3">12345</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="column1">12345</td>
-                                            <td class="column2">12345</td>
-                                            <td class="column3">12345</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="table" id="tabla-productos-medios">                                
                             </div>
                         </div>
                     </div>
@@ -132,42 +98,31 @@
 
             <div id="content3" class="content">
                 <h3>Multiplicador Constante</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Vel odit odio, natus quasi tenetur maiores? Reiciendis, tenetur dolorum amet unde aperiam fugit soluta ullam aspernatur.
-                </p>
+                <form>
+                    <div class="inputs-container">
+                        <div class="form-group">
+                            <label class="form-label" for="first">Semilla</label>
+                            <input id="semilla-multiplicador" class="form-input"  type="text" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="first">Constante</label>
+                            <input id="constante-multiplicador" class="form-input"  type="text" />
+                        </div>
+                    </div>
+                    <div class="inputs-container">
+                        <div class="form-group">
+                            <label class="form-label" for="first">Total de Números a Generar</label>
+                            <input id="total-multiplicador" class="form-input"  type="text" />
+                        </div>
+                    </div>
+
+                    <input id="btn-multiplicador" type="submit" value="Generar Números" class="btn">
+                </form>
 
                 <div class="limiter">
                     <div class="container-table">
                         <div class="wrap-table">
-                            <div class="table">
-                                <table>
-                                    <thead>
-                                        <tr class="table-head">
-                                            <th class="column1">Dato1</th>
-                                            <th class="column2">Dato2</th>
-                                            <th class="column3">Dato3</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <td class="column1">12345</td>
-                                            <td class="column2">12345</td>
-                                            <td class="column3">12345</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="column1">12345</td>
-                                            <td class="column2">12345</td>
-                                            <td class="column3">12345</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="column1">12345</td>
-                                            <td class="column2">12345</td>
-                                            <td class="column3">12345</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="table" id="tabla-multiplicador">
                             </div>
                         </div>
                     </div>
@@ -308,6 +263,6 @@
         </div>
     </div>
 
-    <script src="js/metodos/tab.js"></script>
+    <script type="module" src="js/metodos/script.js"></script>
 </body>
 </html>
