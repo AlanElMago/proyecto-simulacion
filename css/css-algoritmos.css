@@ -149,3 +149,113 @@ body {
     flex-direction: row;
     gap: 10px;
 }
+
+.limiter {
+    width: 100%;
+    margin: 0 auto
+}
+
+.container-table {
+    width: 100%;
+    height: auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 33px 30px
+}
+
+.wrap-table {
+    width: 1170px
+}
+
+table {
+    border-spacing: 1;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+    position: relative
+}
+
+table * {
+    position: relative
+}
+
+table td,table th {
+    padding-left: 8px
+}
+
+table thead tr {
+    height: 60px;
+    background: #0B2E59
+}
+
+table tbody tr {
+    height: 50px
+}
+
+table tbody tr:last-child {
+    border: 0
+}
+
+table td,table th {
+    text-align: left
+}
+
+table td.l,table th.l {
+    text-align: right
+}
+
+table td.c,table th.c {
+    text-align: center
+}
+
+table td.r,table th.r {
+    text-align: center
+}
+
+.table-head th {
+    font-family: "Montserrat";
+    font-size: 18px;
+    color: #fff;
+    line-height: 1.2;
+    font-weight: unset
+}
+
+tbody tr:nth-child(even) {
+    background-color: #e2e1e1
+}
+
+tbody tr {
+    font-family: "Roboto";
+    font-size: 15px;
+    color: #3A3A3A;
+    line-height: 1.2;
+    font-weight: unset
+}
+
+tbody tr:hover {
+    color: #555;
+    background-color: #e2e1e1;
+    cursor: pointer
+}
+
+.column1 {
+    width: 260px;
+    padding-left: 40px
+}
+
+.column2 {
+    width: 160px
+}
+
+.column3 {
+    width: 245px
+}
