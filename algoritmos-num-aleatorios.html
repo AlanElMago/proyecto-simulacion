@@ -217,46 +217,26 @@
 
             <div id="content6" class="content">
                 <h3>Congruencial Aditivo</h3>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                    Vel odit odio, natus quasi tenetur maiores? Reiciendis, tenetur dolorum amet unde aperiam fugit soluta ullam aspernatur.
-                </p>
-
-                <div class="limiter">
-                    <div class="container-table">
-                        <div class="wrap-table">
-                            <div class="table">
-                                <table>
-                                    <thead>
-                                        <tr class="table-head">
-                                            <th class="column1">Dato1</th>
-                                            <th class="column2">Dato2</th>
-                                            <th class="column3">Dato3</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <td class="column1">12345</td>
-                                            <td class="column2">12345</td>
-                                            <td class="column3">12345</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="column1">12345</td>
-                                            <td class="column2">12345</td>
-                                            <td class="column3">12345</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="column1">12345</td>
-                                            <td class="column2">12345</td>
-                                            <td class="column3">12345</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                <form>
+                    <div class="inputs-container">
+                        <div class="form-group">
+                            <label class="form-label" for="first">Secuencia de números separados por un espacio y una coma</label>
+                            <input id="secuencia-numeros" class="form-input"  type="number" />
+                        </div>                      
+                    </div>
+                    <div class="inputs-container">
+                        <div class="form-group">
+                            <label class="form-label" for="first">Módulo</label>
+                            <input id="modulo-congruencial-aditivo" class="form-input"  type="number" />
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label" for="first">Total de números a Generar</label>
+                            <input id="total-congruencial-aditivo" class="form-input"  type="number" />
                         </div>
                     </div>
-                </div>
+
+                    <input id="btn-congruencial-aditivo" type="submit" value="Generar Números" class="btn">
+                </form>
             </div>
         </div>
     </div>
