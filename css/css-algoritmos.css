@@ -278,14 +278,7 @@ tbody tr:hover {
 }
 
 .combobox {
-    padding: 10px;
     font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
-	cursor: pointer;
-    outline: none;
 }
 
 option:hover {
