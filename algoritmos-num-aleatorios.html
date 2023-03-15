@@ -8,240 +8,253 @@
     <title>Generacion de Numeros Aleatorios</title>
 </head>
 <body>
-    <div class="tab-container">
-        <ul class="options">
-            <li id="option1" class="option option-active">
-                Cuadrados Medios
-            </li>
-
-            <li id="option2" class="option">
-                Productos Medios
-            </li>
-
-            <li id="option3" class="option">
-                Multiplicador Constante
-            </li>
-
-            <li id="option4" class="option">
-                Algoritmo Lineal
-            </li>
-
-            <li id="option5" class="option">
-                Congruencial Multiplicativo
-            </li>
-
-            <li id="option6" class="option">
-                Congruencial Aditivo
-            </li>
-        </ul>
-
-        <div class="contents">
-            <div id="content1" class="content content-active">
-                <h3>Cuadrados Medios</h3>
-                <form>
-                    <div class="inputs-container">
-                        <div class="form-group">
-                            <label class="form-label" for="first">Semilla</label>
-                            <input id="semilla-cuadrados" class="form-input" type="number">
-                        </div>
-                        <div class="form-group">
-                            <label class="form-label" for="first">Total de Números a Generar</label>
-                            <input id="total-cuadrados" class="form-input" type="number">
-                        </div>
+    <div class="main-container">    
+        <div class="btn-inicio">
+            <div>
+                <Button class="btn menu">
+                    <div class="text-btn">
+                        <img src="./Images/home.png" class="img-btn"> 
+                        <a href="index.html">Menú</a>
                     </div>
+                </Button>
+            </div>
+        </div>
 
-                    <input id="btn-cuadrados" type="submit" value="Generar Números" class="btn">
-                </form>
+        <div class="tab-container">
+            <ul class="options">
+                <li id="option1" class="option option-active">
+                    Cuadrados Medios
+                </li>
 
-                <div class="limiter">
-                    <div class="container-table">
-                        <div class="wrap-table">
-                            <div class="table" id="tabla-cuadrados-medios">                                
+                <li id="option2" class="option">
+                    Productos Medios
+                </li>
+
+                <li id="option3" class="option">
+                    Multiplicador Constante
+                </li>
+
+                <li id="option4" class="option">
+                    Algoritmo Lineal
+                </li>
+
+                <li id="option5" class="option">
+                    Congruencial Multiplicativo
+                </li>
+
+                <li id="option6" class="option">
+                    Congruencial Aditivo
+                </li>
+            </ul>
+
+            <div class="contents">
+                <div id="content1" class="content content-active">
+                    <h3>Cuadrados Medios</h3>
+                    <form>
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Semilla</label>
+                                <input id="semilla-cuadrados" class="form-input" type="number">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="first">Total de Números a Generar</label>
+                                <input id="total-cuadrados" class="form-input" type="number">
+                            </div>
+                        </div>
+
+                        <input id="btn-cuadrados" type="submit" value="Generar Números" class="btn">
+                    </form>
+
+                    <div class="limiter">
+                        <div class="container-table">
+                            <div class="wrap-table">
+                                <div class="table" id="tabla-cuadrados-medios">                                
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="content2" class="content">
-                <h3>Productos Medios</h3>
-                <form>
-                    <div class="inputs-container">
-                        <div class="form-group">
-                            <label class="form-label" for="first">Semilla 0</label>
-                            <input id="semilla1-productos" class="form-input"  type="number" />
+                <div id="content2" class="content">
+                    <h3>Productos Medios</h3>
+                    <form>
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Semilla 0</label>
+                                <input id="semilla1-productos" class="form-input"  type="number" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="first">Semilla 1</label>
+                                <input id="semilla2-productos" class="form-input"  type="number" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label" for="first">Semilla 1</label>
-                            <input id="semilla2-productos" class="form-input"  type="number" />
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Total de Números a Generar</label>
+                                <input id="total-productos" class="form-input"  type="number" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="inputs-container">
-                        <div class="form-group">
-                            <label class="form-label" for="first">Total de Números a Generar</label>
-                            <input id="total-productos" class="form-input"  type="number" />
-                        </div>
-                    </div>
 
-                    <input id="btn-productos" type="submit" value="Generar Números" class="btn">
-                </form>
+                        <input id="btn-productos" type="submit" value="Generar Números" class="btn">
+                    </form>
 
-                <div class="limiter">
-                    <div class="container-table">
-                        <div class="wrap-table">
-                            <div class="table" id="tabla-productos-medios">                                
+                    <div class="limiter">
+                        <div class="container-table">
+                            <div class="wrap-table">
+                                <div class="table" id="tabla-productos-medios">                                
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="content3" class="content">
-                <h3>Multiplicador Constante</h3>
-                <form>
-                    <div class="inputs-container">
-                        <div class="form-group">
-                            <label class="form-label" for="first">Semilla</label>
-                            <input id="semilla-multiplicador" class="form-input"  type="number" />
+                <div id="content3" class="content">
+                    <h3>Multiplicador Constante</h3>
+                    <form>
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Semilla</label>
+                                <input id="semilla-multiplicador" class="form-input"  type="number" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="first">Constante</label>
+                                <input id="constante-multiplicador" class="form-input"  type="number" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label" for="first">Constante</label>
-                            <input id="constante-multiplicador" class="form-input"  type="number" />
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Total de Números a Generar</label>
+                                <input id="total-multiplicador" class="form-input"  type="number" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="inputs-container">
-                        <div class="form-group">
-                            <label class="form-label" for="first">Total de Números a Generar</label>
-                            <input id="total-multiplicador" class="form-input"  type="number" />
-                        </div>
-                    </div>
 
-                    <input id="btn-multiplicador" type="submit" value="Generar Números" class="btn">
-                </form>
+                        <input id="btn-multiplicador" type="submit" value="Generar Números" class="btn">
+                    </form>
 
-                <div class="limiter">
-                    <div class="container-table">
-                        <div class="wrap-table">
-                            <div class="table" id="tabla-multiplicador">
+                    <div class="limiter">
+                        <div class="container-table">
+                            <div class="wrap-table">
+                                <div class="table" id="tabla-multiplicador">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="content4" class="content">
-                <h3>Algoritmo Lineal</h3>
-                <form>
-                    <div class="inputs-container">
-                        <div class="form-group">
-                            <label class="form-label" for="first">Semilla</label>
-                            <input id="semilla-algoritmo-lineal" class="form-input"  type="number" />
+                <div id="content4" class="content">
+                    <h3>Algoritmo Lineal</h3>
+                    <form>
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Semilla</label>
+                                <input id="semilla-algoritmo-lineal" class="form-input"  type="number" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="first">Constante Multiplicativo</label>
+                                <input id="constante-multiplicador-algoritmo-lineal" class="form-input"  type="number" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label" for="first">Constante Multiplicativo</label>
-                            <input id="constante-multiplicador-algoritmo-lineal" class="form-input"  type="number" />
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Constante Aditivo</label>
+                                <input id="constante-aditivo" class="form-input"  type="number" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="first">Módulo</label>
+                                <input id="modulo-algoritmo-lineal" class="form-input"  type="number" />
+                            </div>
                         </div>
-                    </div>
-                    <div class="inputs-container">
-                        <div class="form-group">
-                            <label class="form-label" for="first">Constante Aditivo</label>
-                            <input id="constante-aditivo" class="form-input"  type="number" />
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Total de Números a Generar</label>
+                                <input id="total-algoritmo-lineal" class="form-input"  type="number" />
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label class="form-label" for="first">Módulo</label>
-                            <input id="modulo-algoritmo-lineal" class="form-input"  type="number" />
-                        </div>
-                    </div>
-                    <div class="inputs-container">
-                        <div class="form-group">
-                            <label class="form-label" for="first">Total de Números a Generar</label>
-                            <input id="total-algoritmo-lineal" class="form-input"  type="number" />
-                        </div>
-                    </div>
 
-                    <input id="btn-algoritmo-lineal" type="submit" value="Generar Números" class="btn">
-                </form>
+                        <input id="btn-algoritmo-lineal" type="submit" value="Generar Números" class="btn">
+                    </form>
 
-                <div class="limiter">
-                    <div class="container-table">
-                        <div class="wrap-table">
-                            <div class="table" id="tabla-algoritmo-lineal">
+                    <div class="limiter">
+                        <div class="container-table">
+                            <div class="wrap-table">
+                                <div class="table" id="tabla-algoritmo-lineal">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="content5" class="content">
-                <h3>Congruencial Multiplicativo</h3>
-                <form>
-                    <div class="inputs-container">
-                        <div class="form-group">
-                            <label class="form-label" for="first">Semilla</label>
-                            <input id="semilla-congruencial-multiplicativo" class="form-input"  type="number" />
+                <div id="content5" class="content">
+                    <h3>Congruencial Multiplicativo</h3>
+                    <form>
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Semilla</label>
+                                <input id="semilla-congruencial-multiplicativo" class="form-input"  type="number" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="first">Factor de multiplicación (k)</label>
+                                <input id="factor-de-multiplicacion" class="form-input"  type="number" />
+                            </div>                        
                         </div>
-                        <div class="form-group">
-                            <label class="form-label" for="first">Factor de multiplicación (k)</label>
-                            <input id="factor-de-multiplicacion" class="form-input"  type="number" />
-                        </div>                        
-                    </div>
-                    <div class="inputs-container">
-                        <div class="form-group">
-                            <label class="form-label" for="first">Numero entero (g)</label>
-                            <input id="num-entero" class="form-input"  type="number" />
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Numero entero (g)</label>
+                                <input id="num-entero" class="form-input"  type="number" />
+                            </div>
+                            <div class="form-group">
+                                <select name="" id="combobox" class="combobox form-input">
+                                    <option value="opc1">
+                                        a = 3 + 8k
+                                    </option>
+                                    <option value="opc2">
+                                        a = 5 + 8k
+                                    </option>
+                                </select>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <select name="" id="combobox" class="combobox form-input">
-                                <option value="opc1">
-                                    a = 3 + 8k
-                                </option>
-                                <option value="opc2">
-                                    a = 5 + 8k
-                                </option>
-                            </select>
-                        </div>
-                    </div>
 
-                    <input id="btn-congruencial-multiplicativo" type="submit" value="Generar Números" class="btn">
-                </form>
+                        <input id="btn-congruencial-multiplicativo" type="submit" value="Generar Números" class="btn">
+                    </form>
 
-                <div class="limiter">
-                    <div class="container-table">
-                        <div class="wrap-table">
-                            <div class="table" id="tabla-congruencial-multiplicativo">
+                    <div class="limiter">
+                        <div class="container-table">
+                            <div class="wrap-table">
+                                <div class="table" id="tabla-congruencial-multiplicativo">
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div id="content6" class="content">
-                <h3>Congruencial Aditivo</h3>
-                <form>
-                    <div class="inputs-container">
-                        <div class="form-group">
-                            <label class="form-label" for="first">Secuencia de números separados por un espacio y una coma</label>
-                            <input id="secuencia-numeros" class="form-input"  type="text" />
-                        </div>                      
-                    </div>
-                    <div class="inputs-container">
-                        <div class="form-group">
-                            <label class="form-label" for="first">Módulo</label>
-                            <input id="modulo-congruencial-aditivo" class="form-input"  type="number" />
+                <div id="content6" class="content">
+                    <h3>Congruencial Aditivo</h3>
+                    <form>
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Secuencia de números separados por un espacio y una coma</label>
+                                <input id="secuencia-numeros" class="form-input"  type="text" />
+                            </div>                      
                         </div>
-                        <div class="form-group">
-                            <label class="form-label" for="first">Total de números a Generar</label>
-                            <input id="total-congruencial-aditivo" class="form-input"  type="number" />
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Módulo</label>
+                                <input id="modulo-congruencial-aditivo" class="form-input"  type="number" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="first">Total de números a Generar</label>
+                                <input id="total-congruencial-aditivo" class="form-input"  type="number" />
+                            </div>
                         </div>
-                    </div>
 
-                    <input id="btn-congruencial-aditivo" type="submit" value="Generar Números" class="btn">
-                </form>
+                        <input id="btn-congruencial-aditivo" type="submit" value="Generar Números" class="btn">
+                    </form>
 
-                <div class="limiter">
-                    <div class="container-table">
-                        <div class="wrap-table">
-                            <div class="table" id="tabla-congruencial-aditivo">
+                    <div class="limiter">
+                        <div class="container-table">
+                            <div class="wrap-table">
+                                <div class="table" id="tabla-congruencial-aditivo">
+                                </div>
                             </div>
                         </div>
                     </div>
