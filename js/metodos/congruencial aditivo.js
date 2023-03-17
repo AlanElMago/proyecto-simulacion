@@ -10,7 +10,13 @@ btn.addEventListener('click', function (e) {
     return parseInt(numero);
   });
 
-  llenar_tabla(semillas, parseInt(modulo.value), parseInt(total.value));
+  if(entrada.value === '' || modulo.value === '' || total.value === ''){
+    alert('Debes Llenar Todos Los Campos');
+  } else if(semillas.includes(NaN)) {
+    alert('La Entrada De Números Es Incorrecta')
+  } else {        
+    llenar_tabla(semillas, parseInt(modulo.value), parseInt(total.value));
+  }
 });
 
 function llenar_tabla(entrada, m, total) {
@@ -27,11 +33,11 @@ function llenar_tabla(entrada, m, total) {
   <tbody>
   `;
 
-  for (let i = 0; i < total; i++) {
+  for (let i = 0; i < datos.total; i++) {
     html += /* html */ `
       <tr>
-        <td class="column1">${datos.primeraColumna[i]}</td>
-        <td class="column1">${datos.segundaColumna[i]}</td>
+        <td class=${datos.clases[i] ? "label-red" : "column1"}>${datos.primeraColumna[i]}</td>
+        <td class=${datos.clases[i] ? "label-red" : "column1"}>${datos.segundaColumna[i]}</td>
       </tr>
     `;
   }
@@ -48,20 +54,35 @@ export function congruencial_aditivo(entrada, m, total_numeros = 0) {
   let cadena = entrada;
   let semillas = [];
   let r = [];
+  let clases = [];
+  let degradacion = false;
 
   for (let i = 0; i < total_numeros; i++) {
     let resultado = (cadena[i] + cadena[cadena.length - 1]) % m;
     let numAleatorio = resultado / (m - 1);
+
+    if(r.includes(numAleatorio) && !degradacion){
+      alert(`A Partir De La Iteracion ${i} La Semilla Se Degradó`);
+      degradacion = true;
+    }
+
+    if(r.includes(numAleatorio)) {
+      clases.push(true);
+    } else {
+      clases.push(false);
+    }
 
     cadena.push(resultado);
     semillas.push(resultado);
     r.push(numAleatorio);
   }
 
+  if(degradacion) alert('Los Números Repetidos Están Marcados De Color Rojo');
+
   return {
     primeraColumna: semillas,
     segundaColumna: r,
+    clases: clases,
+    total: total_numeros
   };
 }
-
-// console.log(generarNumeroAleatorio([66, 90, 99, 04, 70], 100, 30));
