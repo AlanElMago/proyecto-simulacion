@@ -11,19 +11,20 @@ btn.addEventListener('click', function (e) {
 
   option.value === 'opc1' ? (a = 3) : (a = 5);
 
-  llenar_tabla(
-    parseInt(semilla.value),
-    parseInt(k.value),
-    parseInt(g.value),
-    parseInt(a)
-  );
-
-  console.log(
-    parseInt(semilla.value),
-    parseInt(k.value),
-    parseInt(g.value),
-    parseInt(a)
-  );
+  if(semilla.value === '' || k.value === '' || g.value === '' || option.value === ''){
+    alert('Debes Llenar Todos Los Campos');
+  } else if (parseInt(semilla.value) < 0 || parseInt(k.value) < 0 || parseInt(g.value) < 0) {
+    alert('Las Entradas Deben Ser Números Enteros Positivos');
+  } else if (parseInt(semilla.value) % 2 === 0){
+    alert('La Semilla Debe Ser Un Número Impar');
+  } else {
+    llenar_tabla(
+      parseInt(semilla.value),
+      parseInt(k.value),
+      parseInt(g.value),
+      parseInt(a)
+    );
+  }
 });
 
 function llenar_tabla(semilla, k, g, a) {

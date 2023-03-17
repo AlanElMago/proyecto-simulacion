@@ -335,3 +335,9 @@ a {
     width: 80%;
     flex-direction: row;
 }
+
+.label-red {
+    color: red;
+    width: 260px;
+    padding-left: 40px
+}

@@ -11,14 +11,19 @@ btn_productos.addEventListener('click', function (e) {
   valores.push(parseInt(semilla_1.value));
   valores.push(parseInt(semilla_2.value));
 
-  llenar_tabla_productos_medios(valores, parseInt(total.value));
-  console.log(valores);
+  if(semilla_1.value === '' || semilla_2.value.length === '' || total.value === ''){
+    alert('Debes Llenar Todos Los Campos');
+  } else if (semilla_1.value.length < 4 || semilla_2.value.length < 4){
+    alert('Las Semillas Deben Ser De 4 Dígitos O Más');
+  } else {
+    llenar_tabla_productos_medios(valores, parseInt(total.value)); 
+
+    valores = []
+  }
 });
 
 function llenar_tabla_productos_medios(semillas, total) {
   let datos = productos_medios(semillas, total);
-
-  console.log(datos);
 
   let html = /* html */ `
   <table>
@@ -32,12 +37,12 @@ function llenar_tabla_productos_medios(semillas, total) {
   <tbody>
   `;
 
-  for (let i = 0; i < total; i++) {
+  for (let i = 0; i < datos.total; i++) {
     html += /* html */ `
       <tr>
-        <td class="column1">${datos.primeraColumna[i]}</td>
-        <td class="column1">${datos.segundaColumna[i]}</td>
-        <td class="column1">${datos.terceraColumna[i]}</td>
+        <td class=${datos.clases[i] ? "label-red" : "column1"}>${datos.primeraColumna[i]}</td>
+        <td class=${datos.clases[i] ? "label-red" : "column1"}>${datos.segundaColumna[i]}</td>
+        <td class=${datos.clases[i] ? "label-red" : "column1"}>${datos.terceraColumna[i]}</td>
       </tr>
     `;
   }
@@ -53,6 +58,8 @@ function llenar_tabla_productos_medios(semillas, total) {
 export function productos_medios(semillas, total_numeros = 0) {
   let y = [];
   let r = [];
+  let clases = [];
+  let degradacion = false;
 
   for (let i = 0; i < total_numeros; i++) {
     let cuadrado = semillas[i] * semillas[i + 1];
@@ -66,13 +73,26 @@ export function productos_medios(semillas, total_numeros = 0) {
     let mitad = cuadradoStr.length / 2;
     let mitadStr = cuadradoStr.substring(mitad / 2, mitad / 2 + mitad);
     let semilla = parseInt(mitadStr);
-
     let numAleatorio = semilla / 10000;
 
+    if(r.includes(numAleatorio) && !degradacion){
+      alert(`A Partir De La Iteracion ${i} La Semilla Se Degradó`);
+      degradacion = true;
+    }
+
+    if(r.includes(numAleatorio)) {
+      clases.push(true);
+    } else {
+      clases.push(false);
+    }
+
     semillas.push(semilla);
+    valores.push(semilla);
     r.push(numAleatorio);
     y.push(cuadrado);
   }
+
+  if(degradacion) alert('Los Números Repetidos Están Marcados De Color Rojo');
 
   semillas.shift();
   semillas.shift();
@@ -81,6 +101,8 @@ export function productos_medios(semillas, total_numeros = 0) {
     primeraColumna: y,
     segundaColumna: semillas,
     terceraColumna: r,
+    clases: clases,
+    total: total_numeros
   };
 }
 
