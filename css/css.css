@@ -88,7 +88,7 @@ body {
 }
 
 .btn {
-    padding: 15px 20px;
+    padding: 15px 20px;    
     background-color: #EBB652;
     color: #FFF;
     border: none;
@@ -186,6 +186,12 @@ p {
     border-radius: 20px;
     padding: 37px;
     margin-bottom: 20px;
+}
+
+.dice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
 }
 
 .dice-holder {
@@ -316,4 +322,16 @@ label {
     display: flex;
     justify-content: space-between;
     gap: 37px;
+}
+
+.score-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+}
+
+.block-selected {
+    background-color: #7DCCEE;
+    color: #FFF;
 }

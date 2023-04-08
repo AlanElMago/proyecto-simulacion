@@ -46,31 +46,31 @@
                     <!-- este tablero es para jugar los espacios de 3 iguales, full house, etc -->
                     <div class="maximum">
                         <div class="points-container">
-                            <div class = "block">
+                            <div class = "block" id="tres-iguales">
                                 <label>3 Iguales</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="cuatro-iguales">
                                 <label>4 Iguales</label>
                                 <div class="score-block"></div>        
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="fullhouse">
                                 <label>Full House</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="corrida-corta">
                                 <label>Escalera C.</label>
                                 <div class="score-block"></div>                        
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="corrida-larga">
                                 <label>Escalera L.</label>
                                 <div class="score-block"></div>                        
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="yathzee">
                                 <label>Yahtzee</label>
                                 <div class="score-block"></div>                        
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="chance">
                                 <label>Chance</label>
                                 <div class="score-block"></div>                        
                             </div>
@@ -84,20 +84,20 @@
                 <div class="score">
                     <div class="points-total">
                         <div class="left-container">
-                            <div class = "block">
+                            <div class = "block" id="bono">
                                 <label>Bono</label>
-                                <div class="score-block"></div>                        
+                                <div class="score-block">0</div>                 
                             </div>
                         </div>
             
                         <div class="right-container">
-                            <div class = "block">
+                            <div class = "block" id="bono-yathzee">
                                 <label>Bono Y.</label>
-                                <div class="score-block"></div>                        
+                                <div class="score-block">0</div>                 
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="total">
                                 <label>Total</label>
-                                <div class="score-block"></div>                        
+                                <div class="score-block">0</div>             
                             </div>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
         </div>
 
         <!-- este es el tablero dados -->
-        <div>        
+        <div class="dice-container">        
             <div class="dice-holder">
                 <div class="die-holder" id="die-1"></div>
                 <div class="die-holder" id="die-2"></div>

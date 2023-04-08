@@ -11,9 +11,7 @@ let btn_rolls = document.querySelector('#btn-rolls');
 let dices = document.querySelectorAll('.die-holder');
 
 /* variables */
-
 let rolls = 3;
-let is_stroke = false;
 
 dices.forEach((dice) => {
   dice.addEventListener('click', () => {
