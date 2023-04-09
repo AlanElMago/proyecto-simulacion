@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/css-algoritmos.css">
+    <title>Algoritmos de Comprobación</title>
+</head>
+<body>
+    <div class="main-container">    
+        <div class="btn-inicio">
+            <div>
+                <Button class="btn menu">
+                    <div class="text-btn">
+                        <img src="./Images/home.png" class="img-btn"> 
+                        <a href="index.html">Menú</a>
+                    </div>
+                </Button>
+            </div>
+        </div>
+
+        <div class="tab-container">
+            <ul class="options">
+                <li id="option1" class="option option-active">
+                    Chi-cuadrada
+                </li>
+
+                <li id="option2" class="option">
+                    Kolmogorov-Smirnov
+                </li>
+            </ul>
+
+            <div class="contents">
+                <div id="content1" class="content content-active">
+                    <h3>Chi-cuadrada</h3>
+                    <form>
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Nivel de Confianza</label>
+                                <input id="confianza-chi" class="form-input" type="number">
+                            </div>
+                        </div>
+
+                        <input id="btn-chi" type="submit" value="Validar" class="btn">
+                    </form>
+
+                    <div class="limiter">
+                        <div class="container-table">
+                            <div class="wrap-table">
+                                <div class="table" id="tabla-cuadrados-medios">                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content2" class="content">
+                    <h3>Kolmogorov-Smirnov</h3>
+                    <form>
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Semilla 0</label>
+                                <input id="semilla1-productos" class="form-input"  type="number" />
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label" for="first">Semilla 1</label>
+                                <input id="semilla2-productos" class="form-input"  type="number" />
+                            </div>
+                        </div>
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Total de Números a Generar</label>
+                                <input id="total-productos" class="form-input"  type="number" />
+                            </div>
+                        </div>
+
+                        <input id="btn-productos" type="submit" value="Generar Números" class="btn">
+                    </form>
+
+                    <div class="limiter">
+                        <div class="container-table">
+                            <div class="wrap-table">
+                                <div class="table" id="tabla-productos-medios">                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
