@@ -23,13 +23,11 @@ btn.addEventListener('click', (e) => {
   array.push(ContarNumeros(0.80, 0.90, datos));
   array.push(ContarNumeros(0.90, 1.00, datos));
   
-  let valorCritico = jStat.chisquare.inv((parseFloat(confianza.value) / 100), 9);
-  console.log(array);
-  
+  let valorCritico = jStat.chisquare.inv((parseFloat(confianza.value) / 100), (Math.sqrt(datos.length)) - 1);    
+
   for(let i = 0; i < array.length; i++){
     estadistico = estadistico + array[i].terceraColumna;
-  }
-  console.log(estadistico);
+  }  
 
   chi_cuadrada(array, valorCritico, estadistico);
 })
