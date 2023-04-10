@@ -2,6 +2,8 @@ let semilla = document.querySelector('#semilla-cuadrados');
 let total = document.querySelector('#total-cuadrados');
 let btn_cuadrados = document.querySelector('#btn-cuadrados');
 let tabla_cuadrados_medios = document.querySelector('#tabla-cuadrados-medios');
+let btnValidacion;
+let datos;
 
 btn_cuadrados.addEventListener('click', function (e) {
   e.preventDefault();
@@ -16,9 +18,11 @@ btn_cuadrados.addEventListener('click', function (e) {
 });
 
 function llenar_tabla_cuadrados_medios(semilla, total) {
-  let datos = cuadrados_medios(total, semilla);
+  datos = cuadrados_medios(total, semilla);
+  localStorage.setItem('datos', JSON.stringify(datos.terceraColumna));
 
   let html = /* html */ `
+  <button id="btn-validar-cuadrados-medios" class="btn">Validar Resultados</button>
   <table>
   <thead>
       <tr class="table-head">
@@ -46,6 +50,12 @@ function llenar_tabla_cuadrados_medios(semilla, total) {
   `;
 
   tabla_cuadrados_medios.innerHTML = html;
+  
+  btnValidacion = document.querySelector('#btn-validar-cuadrados-medios');  
+
+  btnValidacion.addEventListener('click', () => {
+    window.location.href='/algoritmos-comprobacion.html';         
+  })
 }
 
 export function cuadrados_medios(total_numeros = 0, semilla) {
