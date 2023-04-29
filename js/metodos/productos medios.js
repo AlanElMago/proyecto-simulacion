@@ -3,7 +3,9 @@ let semilla_2 = document.querySelector('#semilla2-productos');
 let total = document.querySelector('#total-productos');
 let btn_productos = document.querySelector('#btn-productos');
 let tabla_cuadrados_medios = document.querySelector('#tabla-productos-medios');
+let btnValidacion;
 let valores = [];
+let datos;
 
 btn_productos.addEventListener('click', function (e) {
   e.preventDefault();
@@ -23,9 +25,12 @@ btn_productos.addEventListener('click', function (e) {
 });
 
 function llenar_tabla_productos_medios(semillas, total) {
-  let datos = productos_medios(semillas, total);
+  datos = productos_medios(semillas, total);
+  localStorage.setItem('datos', JSON.stringify(datos.terceraColumna));
 
   let html = /* html */ `
+  <button id="btn-validar-productos-medios" class="btn">Validar Resultados</button>
+  <br>
   <table>
   <thead>
       <tr class="table-head">
@@ -53,6 +58,12 @@ function llenar_tabla_productos_medios(semillas, total) {
   `;
 
   tabla_cuadrados_medios.innerHTML = html;
+
+  btnValidacion = document.querySelector('#btn-validar-productos-medios');
+
+  btnValidacion.addEventListener('click', () => {
+    window.location.href = '/algoritmos-comprobacion.html'
+  })
 }
 
 export function productos_medios(semillas, total_numeros = 0) {

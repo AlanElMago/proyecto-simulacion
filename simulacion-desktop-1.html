@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/css.css">
     <title>Simulación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="main-container">
@@ -106,7 +109,7 @@
         </div>
 
         <!-- este es el tablero dados -->
-        <div>        
+        <div class="dice-container">        
             <div class="dice-holder">
                 <div class="die-holder"></div>
                 <div class="die-holder"></div>
@@ -114,12 +117,17 @@
                 <div class="die-holder"></div>
                 <div class="die-holder"></div>
             </div>
+
             <Button class="btn btn-tirar">
                 <div class="text-btn">
                     <img src="./Images/tirar-x.png" class="img-btn"> 
                     <p>Tirar</p>
                 </div>
             </Button>
+
+            <div class="juegos-label">
+                <!-- <p >aña</p> -->
+            </div>
         </div>
     </div>
 
@@ -139,14 +147,58 @@
                 </div>
             </button>
 
-            <button class="btn btn-green">
+            <button class="btn btn-green" id="btn-menu-simulate">
                 <div class="text-btn">
                     <img src="./Images/simular.png" class="img-btn">
                     <p>Simular</p>
                 </div>
             </button>
         </div>
-
     </div>
+
+    <dialog class="modal modal-simulate" id="menu-simulate">
+        <div class="title-container">
+            <div>
+                <h1>Parámetros</h1>
+            </div>
+            <button id="btn-close-menu-simulate"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label>Número de Juegos</label>
+                <input type="number" required class="form-control" id="numero-juegos" name="juegos">
+            </div>
+
+            <div class="estrategia-container">
+                <div>
+                    <p>Estrategia</p>
+                    <div class="col-1">
+                        <button class="btn-estrategia">Priorizar Sección Superior</button>
+                        <button class="btn-estrategia">Priorizar Sección Inferior</button>
+                        <button class="btn-estrategia">Solo Primera Tirada</button>
+                        <button class="btn-estrategia">Priorizar Mejor Probabilidad</button>
+                        <button class="btn-estrategia">Estrategia de Alan</button>
+                        <button class="btn-estrategia">Estrategia Óptima</button>
+                    </div>
+                </div>
+                <div>
+                    <p>Descripción</p>
+                    <div class="col-2-container">
+                        <div class="col-2"></div>
+                        <div>
+                            <button class="btn btn-green" id="btn-menu-simulate-submit">
+                                <div class="text-btn">
+                                    <img src="./Images/simular.png" class="img-btn">
+                                    <p>Simular</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </dialog>
+    <script src="js/simulate/simulate.js"></script>
 </body>
 </html>

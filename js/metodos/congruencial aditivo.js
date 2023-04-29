@@ -3,6 +3,8 @@ let modulo = document.querySelector('#modulo-congruencial-aditivo');
 let total = document.querySelector('#total-congruencial-aditivo');
 let btn = document.querySelector('#btn-congruencial-aditivo');
 let tabla = document.querySelector('#tabla-congruencial-aditivo');
+let datos;
+let btnValidacion;
 
 btn.addEventListener('click', function (e) {
   e.preventDefault();
@@ -20,9 +22,12 @@ btn.addEventListener('click', function (e) {
 });
 
 function llenar_tabla(entrada, m, total) {
-  let datos = congruencial_aditivo(entrada, m, total);
+  datos = congruencial_aditivo(entrada, m, total);
+  localStorage.setItem('datos', JSON.stringify(datos.segundaColumna));
 
   let html = /* html */ `
+  <button id="btn-validar-congruencial-multiplicativo" class="btn">Validar Resultados</button>
+  <br />
   <table>
   <thead>
       <tr class="table-head">
@@ -48,6 +53,12 @@ function llenar_tabla(entrada, m, total) {
   `;
 
   tabla.innerHTML = html;
+
+  btnValidacion = document.querySelector('#btn-validar-congruencial-multiplicativo');
+
+  btnValidacion.addEventListener('click', () => {
+    window.location.href = '/algoritmos-comprobacion.html'
+  })
 }
 
 export function congruencial_aditivo(entrada, m, total_numeros = 0) {

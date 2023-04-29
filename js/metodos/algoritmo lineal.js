@@ -7,6 +7,8 @@ let modulo = document.querySelector('#modulo-algoritmo-lineal');
 let total = document.querySelector('#total-algoritmo-lineal');
 let btn = document.querySelector('#btn-algoritmo-lineal');
 let tabla_algoritmo_lineal = document.querySelector('#tabla-algoritmo-lineal');
+let btnValidacion;
+let datos;
 
 btn.addEventListener('click', function (e) {
   e.preventDefault();
@@ -37,9 +39,12 @@ btn.addEventListener('click', function (e) {
 });
 
 function llenar_tabla_algoritmo_lineal(semilla, a, c, m, total) {
-  let datos = algoritmo_lineal(semilla, a, c, m, total);
+  datos = algoritmo_lineal(semilla, a, c, m, total);
+  localStorage.setItem('datos', JSON.stringify(datos.segundaColumna));
 
   let html = /* html */ `
+  <button id="btn-validar-algoritmo-lineal" class="btn">Validar Resultados</button>
+  <br>
   <table>
   <thead>
       <tr class="table-head">
@@ -65,6 +70,12 @@ function llenar_tabla_algoritmo_lineal(semilla, a, c, m, total) {
   `;
 
   tabla_algoritmo_lineal.innerHTML = html;
+
+  btnValidacion = document.querySelector('#btn-validar-algoritmo-lineal');
+
+  btnValidacion.addEventListener('click', () => {
+    window.location.href = '/algoritmos-comprobacion.html'
+  })
 }
 
 export function algoritmo_lineal(semilla, a, c, m, total_numeros = 0) {

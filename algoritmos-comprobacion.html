@@ -29,6 +29,14 @@
                 <li id="option2" class="option">
                     Kolmogorov-Smirnov
                 </li>
+
+                <li id="option3" class="option">
+                    Corridas Arriba y Abajo
+                </li>
+
+                <li id="option4" class="option">
+                    Poker
+                </li>
             </ul>
 
             <div class="contents">
@@ -60,28 +68,64 @@
                     <form>
                         <div class="inputs-container">
                             <div class="form-group">
-                                <label class="form-label" for="first">Semilla 0</label>
-                                <input id="semilla1-productos" class="form-input"  type="number" />
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label" for="first">Semilla 1</label>
-                                <input id="semilla2-productos" class="form-input"  type="number" />
-                            </div>
-                        </div>
-                        <div class="inputs-container">
-                            <div class="form-group">
-                                <label class="form-label" for="first">Total de Números a Generar</label>
-                                <input id="total-productos" class="form-input"  type="number" />
+                                <label class="form-label" for="first">Nivel de Confianza</label>
+                                <input id="confianza-ks" class="form-input" type="number">
                             </div>
                         </div>
 
-                        <input id="btn-productos" type="submit" value="Generar Números" class="btn">
+                        <input id="btn-ks" type="submit" value="Validar" class="btn">
                     </form>
 
                     <div class="limiter">
                         <div class="container-table">
                             <div class="wrap-table">
-                                <div class="table" id="tabla-productos-medios">                                
+                                <div class="table" id="tabla-ks">                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content3" class="content">
+                    <h3>Corridas Arriba y Abajo</h3>
+                    <form>
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Nivel de Confianza</label>
+                                <input id="confianza-corridas" class="form-input" type="number">
+                            </div>
+                        </div>
+
+                        <input id="btn-corridas" type="submit" value="Validar" class="btn">
+                    </form>
+
+                    <div class="limiter">
+                        <div class="container-table">
+                            <div class="wrap-table">
+                                <div class="table" id="tabla-corridas">                                
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="content4" class="content">
+                    <h3>Poker</h3>
+                    <form>
+                        <div class="inputs-container">
+                            <div class="form-group">
+                                <label class="form-label" for="first">Nivel de Confianza</label>
+                                <input id="confianza-poker" class="form-input" type="number">
+                            </div>
+                        </div>
+
+                        <input id="btn-poker" type="submit" value="Validar" class="btn">
+                    </form>
+
+                    <div class="limiter">
+                        <div class="container-table">
+                            <div class="wrap-table">
+                                <div class="table" id="tabla-poker">                                
                                 </div>
                             </div>
                         </div>
@@ -91,7 +135,7 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.9.6/jstat.min.js" integrity="sha512-UK8MjH09aePxFAd8OwI5P4oP462OBBNGVh3OtnuHjybd0T3ArUbAseIuHpS1XfinmMXcCZG5barC+7SNPjuQtg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jstat/1.9.6/jstat.min.js"></script>
     <script type="module" src="js/comprobacion/script.js"></script>
 </body>
 </html>

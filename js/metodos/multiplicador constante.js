@@ -3,6 +3,8 @@ let constante = document.querySelector('#constante-multiplicador');
 let total = document.querySelector('#total-multiplicador');
 let btn_multiplicador = document.querySelector('#btn-multiplicador');
 let tabla_multiplicador = document.querySelector('#tabla-multiplicador');
+let datos;
+let btnValidacion;
 
 btn_multiplicador.addEventListener('click', function (e) {
   e.preventDefault();
@@ -21,9 +23,12 @@ btn_multiplicador.addEventListener('click', function (e) {
 });
 
 function llenar_tabla_multiplicador(semilla, constante, total) {
-  let datos = multiplicador_constante(semilla, constante, total);
+  datos = multiplicador_constante(semilla, constante, total);
+  localStorage.setItem('datos', JSON.stringify(datos.terceraColumna));
 
   let html = /* html */ `
+  <button id="btn-validar-multiplicador-constante" class="btn">Validar Resultados</button>
+  <br>
   <table>
   <thead>
       <tr class="table-head">
@@ -51,6 +56,12 @@ function llenar_tabla_multiplicador(semilla, constante, total) {
   `;
 
   tabla_multiplicador.innerHTML = html;
+
+  btnValidacion = document.querySelector('#btn-validar-multiplicador-constante');
+
+  btnValidacion.addEventListener('click', () => {
+    window.location.href = '/algoritmos-comprobacion.html';
+  })
 }
 
 export function multiplicador_constante(
