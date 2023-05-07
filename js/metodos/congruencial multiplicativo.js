@@ -5,6 +5,8 @@ let option = document.querySelector('#combobox');
 let btn = document.querySelector('#btn-congruencial-multiplicativo');
 let tabla = document.querySelector('#tabla-congruencial-multiplicativo');
 let a = 0;
+let btnValidacion;
+let datos;
 
 btn.addEventListener('click', function (e) {
   e.preventDefault();
@@ -28,9 +30,12 @@ btn.addEventListener('click', function (e) {
 });
 
 function llenar_tabla(semilla, k, g, a) {
-  let datos = congruencial_multiplicativo(semilla, k, g, a);
+  datos = congruencial_multiplicativo(semilla, k, g, a);
+  localStorage.setItem('datos', JSON.stringify(datos.segundaColumna));
 
   let html = /* html */ `
+  <button id="btn-validar-congruencial-multiplicativo" class="btn">Validar Resultados</button>
+  <br />
   <table>
   <thead>
       <tr class="table-head">
@@ -56,6 +61,12 @@ function llenar_tabla(semilla, k, g, a) {
   `;
 
   tabla.innerHTML = html;
+
+  btnValidacion = document.querySelector('#btn-validar-congruencial-multiplicativo');
+
+  btnValidacion.addEventListener('click', () => {
+    window.location.href = '/algoritmos-comprobacion.html'
+  })
 }
 
 export function congruencial_multiplicativo(semilla, k, g, a) {

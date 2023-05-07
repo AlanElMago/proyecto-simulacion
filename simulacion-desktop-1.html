@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/css.css">
     <title>Simulación</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <div class="main-container">
@@ -16,27 +19,27 @@
                     <!-- este tablero es para obtener el puntaje de bono -->
                     <div class="lower">
                         <div class="points-container">
-                            <div class = "block">
+                            <div class = "block" id="unos">
                                 <label>Unos</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="doses">
                                 <label>Doses</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="treses">
                                 <label>Treses</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="cuatros">
                                 <label>Cuatros</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="cincos">
                                 <label>Cincos</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="seises">
                                 <label>Seises</label>
                                 <div class="score-block"></div>
                             </div>
@@ -46,36 +49,36 @@
                     <!-- este tablero es para jugar los espacios de 3 iguales, full house, etc -->
                     <div class="maximum">
                         <div class="points-container">
-                            <div class = "block">
+                            <div class = "block" id="tres-iguales">
                                 <label>3 Iguales</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="cuatro-iguales">
                                 <label>4 Iguales</label>
                                 <div class="score-block"></div>        
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="fullhouse">
                                 <label>Full House</label>
                                 <div class="score-block"></div>
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="corrida-corta">
                                 <label>Escalera C.</label>
                                 <div class="score-block"></div>                        
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="corrida-larga">
                                 <label>Escalera L.</label>
                                 <div class="score-block"></div>                        
                             </div>
-                            <div class = "block">
-                                <label>Yahtzee</label>
+                            <div class = "block" id="yathzee">
+                                <label>Yathzee</label>
                                 <div class="score-block"></div>                        
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="chance">
                                 <label>Chance</label>
                                 <div class="score-block"></div>                        
                             </div>
                         </div>
-                    </div>
+                    </div>                
                 </div>
 
                 <hr class="solid">
@@ -84,20 +87,20 @@
                 <div class="score">
                     <div class="points-total">
                         <div class="left-container">
-                            <div class = "block">
+                            <div class = "block" id="bono">
                                 <label>Bono</label>
-                                <div class="score-block"></div>                        
+                                <div class="score-block">0</div>                 
                             </div>
                         </div>
             
                         <div class="right-container">
-                            <div class = "block">
+                            <div class = "block" id="bono-yathzee">
                                 <label>Bono Y.</label>
-                                <div class="score-block"></div>                        
+                                <div class="score-block">0</div>                 
                             </div>
-                            <div class = "block">
+                            <div class = "block" id="total">
                                 <label>Total</label>
-                                <div class="score-block"></div>                        
+                                <div class="score-block">0</div>             
                             </div>
                         </div>
                     </div>
@@ -106,47 +109,132 @@
         </div>
 
         <!-- este es el tablero dados -->
-        <div>        
+        <div class="dice-container">        
             <div class="dice-holder">
-                <div class="die-holder"></div>
-                <div class="die-holder"></div>
-                <div class="die-holder"></div>
-                <div class="die-holder"></div>
-                <div class="die-holder"></div>
+                <div class="die-holder" id="die-1"></div>
+                <div class="die-holder" id="die-2"></div>
+                <div class="die-holder" id="die-3"></div>
+                <div class="die-holder" id="die-4"></div>
+                <div class="die-holder" id="die-5"></div>
             </div>
-            <Button class="btn btn-tirar">
-                <div class="text-btn">
-                    <img src="./Images/tirar-x.png" class="img-btn"> 
-                    <p>Tirar</p>
-                </div>
-            </Button>
+
+            <div id="rolls-container">
+                <Button class="btn btn-tirar" id="btn-rolls">
+                    <div class="text-btn">
+                        <img src="./Images/tirar-x.png" class="img-btn"> 
+                        <p>Tirar</p>
+                    </div>
+                </Button>
+            </div>
+
+            <div class="juegos-label">
+                <!-- <p >aña</p> -->
+            </div>
         </div>
     </div>
 
     <div class="btns-simulacion">
-        <Button class="btn">
+        <Button class="btn" id="btn-menu-play">
             <div class="text-btn">
                 <img src="./Images/home.png" class="img-btn"> 
-                <a href="index.html">Menú</a>
+                <p>Menú</p>
             </div>
         </Button>
         
         <div class="btns-right">
-            <button class="btn btn-stats">
+            <button class="btn btn-stats" id="btn-stats">
                 <div class="text-btn">
                     <img src="./Images/stats.png" class="img-btn">
                     <p>Stats</p>
                 </div>
             </button>
 
-            <button class="btn btn-green">
+            <button class="btn btn-green" id="btn-menu-simulate">
                 <div class="text-btn">
                     <img src="./Images/simular.png" class="img-btn">
                     <p>Simular</p>
                 </div>
             </button>
         </div>
-
     </div>
+
+    <dialog class="modal modal-simulate" id="menu-simulate">
+        <div class="title-container">
+            <div>
+                <h1>Parámetros</h1>
+            </div>
+            <button id="btn-close-menu-simulate"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label>Número de Juegos</label>
+                <input type="number" required class="form-control" id="numero-juegos" name="juegos">
+                <label>Semilla</label>
+                <input type="number" required class="form-control" id="semilla" name="semilla">
+            </div>
+
+            <div class="estrategia-container">
+                <div>
+                    <p>Estrategia</p>
+                    <div class="col-1">
+                        <button class="btn-estrategia" id="btn-seccion-superior">Priorizar Sección Superior</button>
+                        <button class="btn-estrategia" id="btn-seccion-inferior">Priorizar Sección Inferior</button>
+                        <button class="btn-estrategia" id="btn-primera-tirada">Solo Primera Tirada</button>
+                    </div>
+                </div>
+                <div>
+                    <p>Descripción</p>
+                    <div class="col-2-container">
+                        <div class="col-2 descripcion"></div>
+                        <div>
+                            <button class="btn btn-green" id="btn-menu-simulate-submit">
+                                <div class="text-btn">
+                                    <img src="./Images/simular.png" class="img-btn">
+                                    <p>Simular</p>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="modal modal-campos" id="menu-play">
+        <h1>Pausa</h1>
+
+        <div class="modal-btns">
+            <Button class="btn btn-green" id="btn-close-menu-play">
+                <div class="text-btn">
+                    <i class="fa-solid fa-play"></i>
+                    <p>Continuar</p>
+                </div>
+            </Button>
+
+            <Button class="btn">
+                <div class="text-btn">
+                    <a href="./simulacion-desktop-1.html">
+                        <i class="fa-solid fa-rotate-right"></i>
+                        Reiniciar
+                    </a>
+                </div>
+            </Button>
+
+            <Button class="btn btn-red">
+                <div class="text-btn">
+                    <a href="./index.html">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        Salir
+                    </a>
+                </div>
+            </Button>
+        </div>
+    </dialog>
+
+    <div id="resultado"></div>
+    <div id="modal-campos-container"></div>
+    
+    <script type="module" src="js/simulate/simulate.js"></script>
 </body>
 </html>

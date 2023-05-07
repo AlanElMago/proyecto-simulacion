@@ -23,6 +23,7 @@ function llenar_tabla_cuadrados_medios(semilla, total) {
 
   let html = /* html */ `
   <button id="btn-validar-cuadrados-medios" class="btn">Validar Resultados</button>
+  <br />
   <table>
   <thead>
       <tr class="table-head">
@@ -54,7 +55,7 @@ function llenar_tabla_cuadrados_medios(semilla, total) {
   btnValidacion = document.querySelector('#btn-validar-cuadrados-medios');  
 
   btnValidacion.addEventListener('click', () => {
-    window.location.href='/algoritmos-comprobacion.html';         
+    window.location.href = '/algoritmos-comprobacion.html';         
   })
 }
 

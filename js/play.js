@@ -1,17 +1,21 @@
 /* imports */
 import { Rolls } from './rolls.js';
+import { modalCampos } from './simulate/modalCampos.js';
 /* elements */
-let die_1 = document.querySelector('#die-1');
-let die_2 = document.querySelector('#die-2');
-let die_3 = document.querySelector('#die-3');
-let die_4 = document.querySelector('#die-4');
-let die_5 = document.querySelector('#die-5');
 let rolls_container = document.querySelector('#rolls-container');
 let btn_rolls = document.querySelector('#btn-rolls');
 let dices = document.querySelectorAll('.die-holder');
+let btnMenuPlay = document.querySelector('#btn-menu-play');
+let btnSubmit = document.querySelector('#btn-menu-play-submit');
+let btnCloseMenuPlay = document.querySelector('#btn-close-menu-play');
+let menuPlay = document.querySelector('#menu-play');
+let menuForm = document.querySelector('#menu-form');
+let semilla = document.querySelector('#semilla');
 
 /* variables */
 let rolls = 3;
+
+menuForm.showModal()
 
 dices.forEach((dice) => {
   dice.addEventListener('click', () => {
@@ -24,4 +28,27 @@ dices.forEach((dice) => {
   });
 });
 
-Rolls(rolls, btn_rolls, rolls_container, dices);
+btnMenuPlay.addEventListener('click', () => {
+  menuPlay.showModal();
+})
+
+btnCloseMenuPlay.addEventListener('click', () => {
+  menuPlay.close();
+})
+
+btnSubmit.addEventListener('click', (e) => {
+  e.preventDefault();
+  
+  if(semilla.value.length < 4) {
+    modalCampos(2);
+  } else {
+    Rolls(rolls, btn_rolls, rolls_container, dices, semilla);
+    menuForm.close();
+  }
+})
+
+menuForm.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    e.preventDefault();
+  }
+});

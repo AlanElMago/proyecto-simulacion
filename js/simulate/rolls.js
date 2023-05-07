@@ -1,15 +1,22 @@
-import { dado } from "./modelo/modelo.js";
-import { PointsTable } from "./points-table.js";
+import { dado } from "../modelo/modelo.js";
+import { primeraTirada } from "./estrategias/primeraTirada.js";
+import { seccionInferior } from "./estrategias/priorizarSeccionInferior.js";
+import { seccionSuperior } from "./estrategias/priorizarSeccionSuperior.js";
+import { PointsTable, casillas } from "./points-table.js";
+import { endgame } from "./simulate.js";
 let diceHolder = document.querySelector('.dice-holder');
 let turnos = 0;
-let total = document.querySelector('#total');
-let resultadoContainer = document.querySelector('#resultado');
 let incremento = 0;
+export let dadosTirados = 0;
 
-export function Rolls(rolls, btn_rolls, rolls_container, dices, semilla) {  
-  btn_rolls.addEventListener('click', () => {
+export function Rolls(rolls, btn_rolls, rolls_container, dices, opcion, semilla) {  
+  btn_rolls.addEventListener('click', () => {    
     if (rolls === 0) {
+      // console.log(casillas[turnos].children[1])
+      // casillas[turnos].children[1].click()
+      if(turnos === 13) turnos = 0;
       turnos++;
+
       rolls = 3;
       rolls_container.removeChild(btn_rolls);
       rolls_container.innerHTML = `
@@ -45,13 +52,13 @@ export function Rolls(rolls, btn_rolls, rolls_container, dices, semilla) {
         dices = document.querySelectorAll('.die-holder');
         btn_rolls = document.querySelector('#btn-rolls');
         
-        Rolls(rolls, btn_rolls, rolls_container, dices, semilla);
+        Rolls(rolls, btn_rolls, rolls_container, dices, opcion, semilla);
         dices.forEach((dice) => {
           for (let i = 0; i < 6; i++) {
             if (!dice.classList.contains(`die_${i + 1}`)) {
               dice.classList.remove(`die_${i + 1}`);
             }
-          }
+          }        
         });
 
         dices.forEach((dice) => {
@@ -65,6 +72,8 @@ export function Rolls(rolls, btn_rolls, rolls_container, dices, semilla) {
           });
         });
       });
+      
+      btn_no_rolls.click()
     } else {      
       rolls_container.removeChild(btn_rolls);
       rolls_container.innerHTML = `
@@ -87,45 +96,29 @@ export function Rolls(rolls, btn_rolls, rolls_container, dices, semilla) {
       incremento++;
       for (let i = 0; i < 5; i++) {
         if (!dices[i].classList.contains('die-stroke')) {
+          dadosTirados++;
           dices[i].classList.add(`die_${caras[i]}`);
         }
       }      
 
-      PointsTable(dices)
+      
+      PointsTable(dices, turnos)
+      switch(opcion) {
+        case 1:
+          seccionSuperior(dices, rolls, casillas);          
+          break;
+        case 2:
+          seccionInferior(dices, rolls, casillas, turnos);          
+          break;
+        case 3:
+          primeraTirada(dices, rolls, casillas);            
+          break;
+        default:
+          break;
+      }
+      
       rolls--;
-      Rolls(rolls, btn_rolls, rolls_container, dices, semilla); 
+      Rolls(rolls, btn_rolls, rolls_container, dices, opcion, semilla); 
     }
-  });
-
-  if(turnos === 13){
-    let html = /* html */ `
-    <dialog class="modal" id='resultado-modal'>
-        <h1>¡Hiciste ${total.children[1].textContent} puntos!</h1>
-        <div class="modal-btns">
-            <Button class="btn">
-                <div class="text-btn">
-                    <a href="./juego-desktop-1.html">
-                        <i class="fa-solid fa-rotate-right"></i>
-                        Reiniciar
-                    </a>
-                </div>
-            </Button>
-
-            <Button class="btn btn-red">
-                <div class="text-btn">
-                    <a href="./index.html">
-                        <i class="fa-solid fa-right-from-bracket"></i>
-                        Salir
-                    </a>
-                </div>
-            </Button>
-        </div>
-    </dialog>`
-
-    resultadoContainer.innerHTML = html;
-  
-    let modalResultado = document.querySelector('#resultado-modal');
-  
-    modalResultado.showModal();
-  }
+  });  
 }
