@@ -121,6 +121,7 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    font-size: 24px;
 }
 
 .img-btn {
@@ -357,6 +358,68 @@ label {
     padding: 50px 10px;
 }
 
+.alert {
+    padding: 0px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.alert .error {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #F44336;
+    color: #FFF;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 15px;
+    font-size: 32px;
+    font-weight: 600;    
+}
+
+.form-play-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+
+.btn-alert {
+    background-color: #F44336;
+    border: none;
+    color: #FFF;
+    font-size: 16px;
+}
+
+.btn-alert-green {
+    background-color: #4CAF50;
+    margin-bottom: 0px;
+}
+
+.btn-alert-green:hover {
+    background-color: #A5D7A7;
+}
+
+.alert .modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+}
+
+.alert .modal-content-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.alert .modal-content-text p, i{
+    font-size: 20px;
+}
+
 .modal h1 {
     margin: auto;
     font-weight: 400;
@@ -365,8 +428,22 @@ label {
     color: #3A3A3A;
 }
 
+.alert p {
+    text-align: center;
+    font-size: 24px;
+}
+
+.alert .btn {
+    margin: 10px auto;
+    font-size: 16px;
+}
+
 .modal::backdrop {
     background-color: rgba(255, 255, 255, .50);
+}
+
+.alert::backdrop {
+    background-color: rgba(0, 0, 0, .50);
 }
 
 .modal-btns {
@@ -383,10 +460,11 @@ label {
     margin: 15px 0px;
 }
 
-.modal-btns .text-btn {
+.modal-btns .text-btn, .text-btn-reload {
     display: flex;
     flex-direction: wrap;
-    justify-content: space-between;
+    justify-content: start;
+    gap: 10px;
 }
 
 .modal-simulate {
@@ -418,7 +496,7 @@ label {
     font-size: 24px;
 }
 
-.modal-simulate .form-control {
+.form-control {
     background-color: #B6B6B6;
     border: none;
     border-radius: 5px;
@@ -428,6 +506,13 @@ label {
     font-size: 18px;
 }
 
+
+.modal .form-group-play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
 .modal-simulate .estrategia-container {
     display: grid;
     grid-template-columns: 1fr 2fr;
@@ -442,6 +527,13 @@ label {
     height: 80%;
     background-color: #B6B6B6;
     border-radius: 10px;
+}
+
+.modal-simulate .estrategia-container .col-2 {
+    box-sizing: border-box;
+    padding: 20px;
+    height: 500px;
+    overflow-y: auto;
 }
 
 .modal-simulate .estrategia-container .col-2-container {
@@ -474,4 +566,29 @@ label {
     color: #FFF;
     font-size: 24px;
     margin-top: 20px;
+}
+
+.modal-simulate .estrategia-container .col-2::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.modal-simulate .estrategia-container .col-2::-webkit-scrollbar:vertical {
+    width:10px;
+}
+
+.modal-simulate .estrategia-container .col-2::-webkit-scrollbar-button:increment,.col-2::-webkit-scrollbar-button {
+    display: none;
+} 
+
+.modal-simulate .estrategia-container .col-2::-webkit-scrollbar:horizontal {
+    height: 10px;
+}
+
+.modal-simulate .estrategia-container .col-2::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 20px;
+}
+
+.modal-simulate .estrategia-container .col-2::-webkit-scrollbar-track {
+    border-radius: 10px;  
 }

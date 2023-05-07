@@ -167,7 +167,22 @@
     </dialog>
     
     <div id="resultado"></div>
-
+    <dialog class="modal" id="menu-form">        
+        <form class="form-play-container">
+            <div class="form-group-play">
+                <label>Semilla</label>
+                <input type="number" required class="form-control" id="semilla" name="semilla">
+            </div>
+            
+            <button class="btn btn-alert btn-alert-green" id="btn-menu-play-submit">
+                <div class="text-btn">
+                    <p>Jugar</p>
+                </div>
+            </button>
+        </form>
+    </dialog>
+    <div id="modal-campos-container"></div>
+    
     <script type="module" src="js/play.js"></script>
 </body>
 </html>
